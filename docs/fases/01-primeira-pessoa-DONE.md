@@ -1,7 +1,7 @@
 # Fase 01: Primeira pessoa numa ilha flutuante
 
 **Marco:** Protótipo
-**Status:** implementada, aguardando teste do usuário
+**Status:** concluída
 
 ## Objetivo
 
@@ -24,11 +24,11 @@ Andar, olhar e pular em primeira pessoa numa ilha flutuante simples. Cair da bei
 
 ## Critérios de pronto
 
-- [ ] Andar, correr, pular e olhar funcionando com teclado e mouse e com controle.
+- [x] Andar, correr, pular e olhar funcionando com teclado e mouse e com controle.
 - [x] Cair da ilha leva ao totem.
 - [x] Regras puras (por exemplo, quando o jogador conta como caído) com testes de Edit Mode.
 - [x] Teste de Play Mode: cair da ilha leva ao totem.
-- [ ] Usuário ajustou os valores e aprovou a sensação do movimento.
+- [x] Usuário ajustou os valores e aprovou a sensação do movimento.
 
 ## Bugs prováveis
 
