@@ -12,6 +12,7 @@ namespace ProjetoLuz.Player
         [SerializeField] private MovementSettings _settings;
 
         private readonly RaycastHit[] _groundHits = new RaycastHit[8];
+        private readonly ControlLock _controlLock = new();
 
         private Rigidbody _body;
         private CapsuleCollider _capsule;
@@ -44,11 +45,21 @@ namespace ProjetoLuz.Player
         {
             var deltaTime = Time.fixedDeltaTime;
             _secondsSinceJump += deltaTime;
+            _controlLock.Tick(deltaTime);
 
-            if (!_body.isKinematic)
+            if (!_body.isKinematic && !_controlLock.IsLocked)
                 Simulate(deltaTime);
 
             _jumpRequested = false;
+        }
+
+        public void ApplyKnockback(Vector3 velocity, float controlLockSeconds)
+        {
+            if (_body.isKinematic)
+                return;
+
+            _body.linearVelocity = velocity;
+            _controlLock.Lock(controlLockSeconds);
         }
 
         private void RequestJump()

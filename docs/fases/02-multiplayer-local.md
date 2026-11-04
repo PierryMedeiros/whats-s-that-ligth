@@ -1,7 +1,7 @@
 # Fase 02: Multiplayer local
 
 **Marco:** Protótipo
-**Status:** pronta para implementar
+**Status:** implementada, aguardando teste do usuário
 
 ## Objetivo
 
@@ -9,11 +9,11 @@ Dois jogadores na mesma ilha, se vendo e se empurrando, com o FishNet no transpo
 
 ## Escopo
 
-- Instalar o FishNet (versão gratuita).
+- Instalar o FishNet (versão gratuita), preso na tag `4.7.3`.
 - Instalar o Multiplayer Play Mode (`com.unity.multiplayer.playmode`) para testar vários jogadores no mesmo PC.
-- NetworkManager com Tugboat, para host e cliente.
-- Spawn do jogador em rede, com o movimento do próprio jogador sob autoridade do cliente.
-- Empurrão simples, sem arma, com knockback: a base do combate.
+- NetworkManager com Tugboat, para host e cliente. O `NetworkBootstrap` inicia sozinho: o editor principal vira host, as instâncias adicionais do Multiplayer Play Mode viram clientes, e build e solo sobem como host.
+- Spawn do jogador em rede, com o movimento do próprio jogador sob autoridade do cliente (`NetworkTransform` client authoritative). Só o dono tem input, câmera, motor e física; nos outros o corpo é kinematic.
+- Empurrão simples, sem arma, com knockback: a base do combate. Attack (botão esquerdo, X no controle) mira à frente; o servidor valida alcance e intervalo e o dono do alvo aplica o impulso, com um instante sem controle.
 - Quem cai da ilha renasce no totem, em rede.
 - Solo continua funcionando como host sem clientes.
 
@@ -28,7 +28,7 @@ Dois jogadores na mesma ilha, se vendo e se empurrando, com o FishNet no transpo
 - [ ] Empurrão funciona nos dois sentidos: host empurra cliente e cliente empurra host.
 - [ ] Queda e renascimento no totem funcionam para host e cliente.
 - [ ] Solo continua funcionando.
-- [ ] Testes de Edit Mode para as regras novas.
+- [x] Testes de Edit Mode para as regras novas.
 - [ ] Usuário testou com dois jogadores e aprovou.
 
 ## Bugs prováveis

@@ -90,3 +90,11 @@ Registro do que foi decidido e por quê. Decisões novas entram no fim, com data
 - **Ilha greybox de uns 150 m no protótipo.** O objetivo é testar movimento; o tamanho real da ilha 1 fica para a fase 19.
 - **Renascimento em 3 s no protótipo.** Os 10 s do GDD pertencem ao sistema de morte da fase 08.
 - **Testes de Play Mode rodam de forma assíncrona pela CLI** (`unity command test run --mode all`, depois `test status`), porque entrar no Play Mode recarrega o domínio e derruba a requisição.
+
+## 04/11/2026: multiplayer local (fase 02)
+
+- **FishNet preso na tag `4.7.3`.** A tag `4.7.4` não compila (o transporte Yak veio com código Pro pela metade; issue #1110 no GitHub do FishNet). Subir de versão quando a issue fechar.
+- **Início automático da partida.** O editor principal vira host e as instâncias adicionais do Multiplayer Play Mode viram clientes (`CurrentPlayer.IsMainEditor`), com nova tentativa de conexão a cada segundo. Build e solo sobem como host. Zero cliques para testar; o menu de conexão fica para a fase 17.
+- **Só o dono simula o próprio jogador.** Input, câmera, AudioListener, motor e queda ficam ligados só no dono; nos outros o Rigidbody é kinematic e segue o `NetworkTransform`. O prefab já nasce no estado de jogador remoto para não existir um frame com duas câmeras.
+- **Empurrão pedido pelo dono, validado no servidor e aplicado no dono do alvo** (`ServerRpc` e depois `TargetRpc`). O alvo fica um instante sem controle para a aceleração do motor não anular o knockback.
+- **`FallRespawn` encontra o totem ao nascer.** Um prefab de rede não guarda referência de cena; quando houver várias ilhas (fase 15), a ilha atual passa a fornecer o totem.

@@ -10,8 +10,10 @@ namespace ProjetoLuz.Player
         [SerializeField] private InputActionReference _look;
         [SerializeField] private InputActionReference _jump;
         [SerializeField] private InputActionReference _sprint;
+        [SerializeField] private InputActionReference _push;
 
         public event Action JumpPressed;
+        public event Action PushPressed;
 
         public Vector2 Move => _move.action.ReadValue<Vector2>();
         public Vector2 Look => _look.action.ReadValue<Vector2>();
@@ -25,17 +27,25 @@ namespace ProjetoLuz.Player
             _look.action.Enable();
             _jump.action.Enable();
             _sprint.action.Enable();
+            _push.action.Enable();
             _jump.action.performed += OnJumpPerformed;
+            _push.action.performed += OnPushPerformed;
         }
 
         private void OnDisable()
         {
             _jump.action.performed -= OnJumpPerformed;
+            _push.action.performed -= OnPushPerformed;
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext context)
         {
             JumpPressed?.Invoke();
+        }
+
+        private void OnPushPerformed(InputAction.CallbackContext context)
+        {
+            PushPressed?.Invoke();
         }
     }
 }
