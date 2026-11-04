@@ -30,7 +30,7 @@ Deixar o repositório e o projeto Unity prontos para trabalhar com testes e comm
 ## Critérios de pronto
 
 - [x] `git status` limpo depois do commit, sem arquivos gerados versionados.
-- [ ] Binários passando pelo LFS (conferir com `git lfs ls-files` quando entrar o primeiro). Hoje não há binário versionado; `git check-attr` confirma o filtro `lfs` em `.png` e `.blend` e o `text` em `.unity`.
+- [x] Regras do LFS configuradas: `git check-attr` confirma o filtro `lfs` em `.png` e `.blend` e o `text` em `.unity`. A conferência com `git lfs ls-files` foi para a fase 18, quando entra o primeiro binário.
 - [x] Testes de Edit Mode enxergando o assembly `ProjetoLuz` e o teste de exemplo passando pela Unity CLI.
 - [x] Commits sem rastro de IA (`git log --format=full`).
 - [x] Play Mode recarregando domínio e cena.
