@@ -1,7 +1,7 @@
 # Fase 02: Multiplayer local
 
 **Marco:** Protótipo
-**Status:** implementada, aguardando teste do usuário
+**Status:** concluída
 
 ## Objetivo
 
@@ -24,12 +24,12 @@ Dois jogadores na mesma ilha, se vendo e se empurrando, com o FishNet no transpo
 
 ## Critérios de pronto
 
-- [ ] Dois jogadores no Multiplayer Play Mode se veem e se movem sem tremer.
-- [ ] Empurrão funciona nos dois sentidos: host empurra cliente e cliente empurra host.
-- [ ] Queda e renascimento no totem funcionam para host e cliente.
-- [ ] Solo continua funcionando.
+- [x] Dois jogadores no Multiplayer Play Mode se veem e se movem sem tremer.
+- [x] Empurrão funciona nos dois sentidos: host empurra cliente e cliente empurra host.
+- [x] Queda e renascimento no totem funcionam para host e cliente.
+- [x] Solo continua funcionando.
 - [x] Testes de Edit Mode para as regras novas.
-- [ ] Usuário testou com dois jogadores e aprovou.
+- [x] Usuário testou com dois jogadores e aprovou.
 
 ## Bugs prováveis
 
