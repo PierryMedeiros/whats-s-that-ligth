@@ -57,6 +57,38 @@ namespace ProjetoLuz.Tests.EditMode.Player
         }
 
         [Test]
+        public void BlockIntoSteepSurface_MovingIntoSurface_RemovesThatComponent()
+        {
+            var normal = Quaternion.Euler(-55f, 0f, 0f) * Vector3.up;
+            var target = new Vector3(2f, 0f, 5f);
+
+            var blocked = GroundMovement.BlockIntoSteepSurface(target, normal);
+
+            Assert.That(Vector3.Distance(blocked, new Vector3(2f, 0f, 0f)), Is.LessThan(Tolerance));
+        }
+
+        [Test]
+        public void BlockIntoSteepSurface_MovingAwayFromSurface_KeepsTarget()
+        {
+            var normal = Quaternion.Euler(-55f, 0f, 0f) * Vector3.up;
+            var target = new Vector3(0f, 0f, -5f);
+
+            var blocked = GroundMovement.BlockIntoSteepSurface(target, normal);
+
+            Assert.That(blocked, Is.EqualTo(target));
+        }
+
+        [Test]
+        public void BlockIntoSteepSurface_FlatNormal_KeepsTarget()
+        {
+            var target = new Vector3(1f, 0f, 1f);
+
+            var blocked = GroundMovement.BlockIntoSteepSurface(target, Vector3.up);
+
+            Assert.That(blocked, Is.EqualTo(target));
+        }
+
+        [Test]
         public void Accelerate_ChangesVelocityByAccelerationTimesDeltaTime()
         {
             var velocity = GroundMovement.Accelerate(Vector3.zero, new Vector3(10f, 0f, 0f), 20f, 0.1f);
