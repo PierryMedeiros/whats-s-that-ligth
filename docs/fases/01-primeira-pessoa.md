@@ -14,6 +14,8 @@ Andar, olhar e pular em primeira pessoa numa ilha flutuante simples. Cair da bei
 - Personagem com física, que pode ser empurrado (vai importar na fase 02).
 - Totem como ponto de renascimento: quem cai da ilha renasce nele depois de alguns segundos.
 - Valores de movimento em ScriptableObject, ajustáveis no Inspector.
+- Remover o `ProjectInfo` provisório e os dois testes de exemplo da fase 00 quando entrarem a primeira regra pura e o primeiro teste de Play Mode de verdade.
+- Decidir o destino da `SampleScene` e do `InputSystem_Actions`, que estão na raiz de `Assets`: mover para `_Project` ou substituir (mover pede confirmação).
 
 ## Fora do escopo
 

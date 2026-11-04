@@ -74,3 +74,10 @@ Registro do que foi decidido e por quê. Decisões novas entram no fim, com data
 
 - **Play Mode recarregando domínio e cena.** O template vem com o recarregamento de domínio desligado, o que deixa estado estático sobreviver de um Play para o outro. Com FishNet e Steamworks.NET no projeto, a entrada um pouco mais lenta no Play Mode compensa os bugs evitados. Dá para voltar ao modo rápido depois, com reset explícito dos estáticos.
 - **Checagem de trailer depois de cada commit.** Garante o histórico sem rastro de IA mesmo que alguma versão do Claude Code anexe um trailer novo.
+
+## 04/11/2026: setup do projeto (fase 00)
+
+- **`.gitkeep` nas pastas de `_Project` ainda vazias.** O git não guarda pasta vazia, mas guarda o `.meta` dela; num clone novo a Unity apagaria o `.meta` órfão e sujaria a árvore. A Unity ignora arquivos que começam com ponto.
+- **Testes rodam com `unity command test run`, com o editor aberto.** O `unity test` abre um editor em batch e recusa rodar com o projeto aberto.
+- **`ProjectInfo` provisório no assembly `ProjetoLuz`.** Um assembly definition sem script não compila, e o teste de exemplo precisava enxergar o assembly. Sai na fase 01, junto com os testes de exemplo.
+- **Play Mode com `EnterPlayModeOptions = None`.** No Unity 6 é essa a configuração que recarrega domínio e cena.

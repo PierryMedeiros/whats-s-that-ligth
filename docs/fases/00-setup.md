@@ -1,7 +1,7 @@
 # Fase 00: Setup do projeto
 
 **Marco:** Protótipo
-**Status:** pronta para implementar
+**Status:** implementada, aguardando teste do usuário
 
 ## Objetivo
 
@@ -29,11 +29,11 @@ Deixar o repositório e o projeto Unity prontos para trabalhar com testes e comm
 
 ## Critérios de pronto
 
-- [ ] `git status` limpo depois do commit, sem arquivos gerados versionados.
-- [ ] Binários passando pelo LFS (conferir com `git lfs ls-files` quando entrar o primeiro).
-- [ ] Testes de Edit Mode enxergando o assembly `ProjetoLuz` e o teste de exemplo passando pela Unity CLI.
-- [ ] Commits sem rastro de IA (`git log --format=full`).
-- [ ] Play Mode recarregando domínio e cena.
+- [x] `git status` limpo depois do commit, sem arquivos gerados versionados.
+- [ ] Binários passando pelo LFS (conferir com `git lfs ls-files` quando entrar o primeiro). Hoje não há binário versionado; `git check-attr` confirma o filtro `lfs` em `.png` e `.blend` e o `text` em `.unity`.
+- [x] Testes de Edit Mode enxergando o assembly `ProjetoLuz` e o teste de exemplo passando pela Unity CLI.
+- [x] Commits sem rastro de IA (`git log --format=full`).
+- [x] Play Mode recarregando domínio e cena.
 
 ## Bugs prováveis
 
