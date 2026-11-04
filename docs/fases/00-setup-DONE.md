@@ -1,7 +1,7 @@
 # Fase 00: Setup do projeto
 
 **Marco:** Protótipo
-**Status:** implementada, aguardando teste do usuário
+**Status:** concluída
 
 ## Objetivo
 
