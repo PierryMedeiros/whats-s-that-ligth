@@ -1,0 +1,43 @@
+# Fase 02: Multiplayer local
+
+**Marco:** Protótipo
+**Status:** pronta para implementar
+
+## Objetivo
+
+Dois jogadores na mesma ilha, se vendo e se empurrando, com o FishNet no transporte Tugboat.
+
+## Escopo
+
+- Instalar o FishNet (versão gratuita).
+- NetworkManager com Tugboat, para host e cliente.
+- Spawn do jogador em rede, com o movimento do próprio jogador sob autoridade do cliente.
+- Empurrão simples, sem arma, com knockback: a base do combate.
+- Quem cai da ilha renasce no totem, em rede.
+- Solo continua funcionando como host sem clientes.
+
+## Fora do escopo
+
+- Steam (fase 05) e voz (fase 06).
+- Armas (fase 12).
+
+## Critérios de pronto
+
+- [ ] Dois jogadores no Multiplayer Play Mode se veem e se movem sem tremer.
+- [ ] Empurrão funciona nos dois sentidos: host empurra cliente e cliente empurra host.
+- [ ] Queda e renascimento no totem funcionam para host e cliente.
+- [ ] Solo continua funcionando.
+- [ ] Testes de Edit Mode para as regras novas.
+- [ ] Usuário testou com dois jogadores e aprovou.
+
+## Bugs prováveis
+
+- Empurrão ignorado porque o jogador empurrado tem autoridade sobre o próprio movimento: o impulso precisa ser aplicado no cliente dono, via RPC direcionado a ele.
+- Câmera ou input de um jogador controlando o outro (ativar só para o dono).
+- Jogador nascendo dentro de outro ou fora da ilha.
+- Comportamento diferente entre host e cliente puro.
+
+## Referências
+
+- GDD: Combate.
+- `CLAUDE.md`: Regras de multiplayer.
