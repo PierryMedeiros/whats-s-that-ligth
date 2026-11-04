@@ -41,10 +41,13 @@ mono_crash.*
 *.unitypackage
 *.app
 
+*.blend1
+
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 .claude/settings.local.json
+CLAUDE.local.md
 
 .env
 *.env
