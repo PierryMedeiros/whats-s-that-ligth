@@ -13,6 +13,7 @@ Convidar amigos pela Steam e jogar pela internet.
 - App ID 480 (Spacewar) nos testes.
 - Criar lobby, convidar pela lista de amigos da Steam e entrar pelo convite.
 - Trocar entre Tugboat (testes locais) e Steam sem mexer em código.
+- O início automático do `NetworkBootstrap` (fase 02) continua só para o Tugboat no editor; na Steam, o host cria o lobby e o cliente entra pelo convite.
 
 ## Fora do escopo
 

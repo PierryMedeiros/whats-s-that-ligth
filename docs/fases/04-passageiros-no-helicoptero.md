@@ -31,6 +31,7 @@ Os outros jogadores ficam em pé dentro do helicóptero em movimento, estáveis,
 - Jogador ficando para trás quando o helicóptero acelera, porque o motor ignora a velocidade do chão.
 - Jogador continuando preso ao veículo depois de sair.
 - Interpolação de rede brigando com o movimento relativo ao veículo.
+- Passageiros vistos pelos outros jogadores ficando para trás, porque o `NetworkTransform` do jogador sincroniza a posição no mundo. Caminho provável: sincronizar a posição relativa ao helicóptero (parent em rede do FishNet).
 
 ## Referências
 

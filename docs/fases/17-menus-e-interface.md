@@ -10,6 +10,7 @@ Tudo que o jogador precisa para começar, configurar e entender a partida.
 ## Escopo inicial
 
 - Menu principal, criar e entrar em partida, configurações de áudio, vídeo, controles e voz.
+- O menu de criar e entrar em partida substitui o início automático do `NetworkBootstrap`.
 - Interface mínima: vida, inventário e botões.
 - Controle (gamepad) funcionando em tudo.
 

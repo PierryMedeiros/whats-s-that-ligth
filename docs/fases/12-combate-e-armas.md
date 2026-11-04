@@ -11,6 +11,7 @@ Combate de empurrar com as armas de gambiarra.
 
 - Frigideira, estilingue, desentupidor, soprador de folhas e luva de boxe com mola.
 - Knockback como base de tudo, com a beirada da ilha como maior perigo.
+- Reaproveitar o caminho do empurrão da fase 02: `PushRule`, pedido por `ServerRpc`, impulso aplicado no dono do alvo por `TargetRpc`, e o `ControlLock`.
 
 ## Referências
 
