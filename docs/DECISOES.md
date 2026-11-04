@@ -81,3 +81,12 @@ Registro do que foi decidido e por quê. Decisões novas entram no fim, com data
 - **Testes rodam com `unity command test run`, com o editor aberto.** O `unity test` abre um editor em batch e recusa rodar com o projeto aberto.
 - **`ProjectInfo` provisório no assembly `ProjetoLuz`.** Um assembly definition sem script não compila, e o teste de exemplo precisava enxergar o assembly. Sai na fase 01, junto com os testes de exemplo.
 - **Play Mode com `EnterPlayModeOptions = None`.** No Unity 6 é essa a configuração que recarrega domínio e cena.
+
+## 04/11/2026: primeira pessoa (fase 01)
+
+- **Personagem com Rigidbody dinâmico, não CharacterController.** Empurrão, knockback (fase 02) e plataforma móvel (fase 04) saem da própria física. O motor controla a velocidade com aceleração no `FixedUpdate`, com atrito zero na cápsula para não grudar em paredes.
+- **Superfície acima da inclinação máxima bloqueia o movimento contra ela.** Com atrito zero, empurrar contra uma rampa íngreme fazia a física converter o empurrão em subida.
+- **Checagem de chão ignora só o próprio collider, sem layer de jogador.** Assim dá para ficar em pé em cima de outro jogador na fase 02.
+- **Ilha greybox de uns 150 m no protótipo.** O objetivo é testar movimento; o tamanho real da ilha 1 fica para a fase 19.
+- **Renascimento em 3 s no protótipo.** Os 10 s do GDD pertencem ao sistema de morte da fase 08.
+- **Testes de Play Mode rodam de forma assíncrona pela CLI** (`unity command test run --mode all`, depois `test status`), porque entrar no Play Mode recarrega o domínio e derruba a requisição.

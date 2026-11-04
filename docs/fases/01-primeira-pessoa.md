@@ -1,7 +1,7 @@
 # Fase 01: Primeira pessoa numa ilha flutuante
 
 **Marco:** Protótipo
-**Status:** pronta para implementar
+**Status:** implementada, aguardando teste do usuário
 
 ## Objetivo
 
@@ -9,13 +9,13 @@ Andar, olhar e pular em primeira pessoa numa ilha flutuante simples. Cair da bei
 
 ## Escopo
 
-- Cena de protótipo com uma ilha flutuante em greybox (2 a 3 minutos de ponta a ponta) e o mar lá embaixo.
+- Cena de protótipo com uma ilha flutuante em greybox de uns 150 m e o mar lá embaixo. O tamanho real (2 a 3 minutos de ponta a ponta) fica para a fase 19.
 - Controle em primeira pessoa pelo Input System: andar, correr, pular e olhar, com teclado e mouse e com controle.
 - Personagem com física, que pode ser empurrado (vai importar na fase 02).
-- Totem como ponto de renascimento: quem cai da ilha renasce nele depois de alguns segundos.
+- Totem como ponto de renascimento: quem cai da ilha renasce nele depois de 3 segundos (ajustável no Inspector; os 10 s do GDD entram com a morte, na fase 08).
 - Valores de movimento em ScriptableObject, ajustáveis no Inspector.
-- Remover o `ProjectInfo` provisório e os dois testes de exemplo da fase 00 quando entrarem a primeira regra pura e o primeiro teste de Play Mode de verdade.
-- Decidir o destino da `SampleScene` e do `InputSystem_Actions`, que estão na raiz de `Assets`: mover para `_Project` ou substituir (mover pede confirmação).
+- Remover o `ProjectInfo` provisório e os dois testes de exemplo da fase 00 (feito).
+- `SampleScene` apagada e substituída pela `_Project/Scenes/Prototype`; `InputSystem_Actions` movido para `_Project/Data` (feito).
 
 ## Fora do escopo
 
@@ -25,9 +25,9 @@ Andar, olhar e pular em primeira pessoa numa ilha flutuante simples. Cair da bei
 ## Critérios de pronto
 
 - [ ] Andar, correr, pular e olhar funcionando com teclado e mouse e com controle.
-- [ ] Cair da ilha leva ao totem.
-- [ ] Regras puras (por exemplo, quando o jogador conta como caído) com testes de Edit Mode.
-- [ ] Teste de Play Mode: cair da ilha leva ao totem.
+- [x] Cair da ilha leva ao totem.
+- [x] Regras puras (por exemplo, quando o jogador conta como caído) com testes de Edit Mode.
+- [x] Teste de Play Mode: cair da ilha leva ao totem.
 - [ ] Usuário ajustou os valores e aprovou a sensação do movimento.
 
 ## Bugs prováveis
