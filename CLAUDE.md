@@ -88,4 +88,5 @@ Co-op em primeira pessoa para PC (Steam), de 1 a 4 jogadores ou solo. Os Cacarec
 - Commits atômicos: uma mudança lógica por commit. `git add` por caminho e `git diff --staged` revisado antes de cada commit.
 - Commit só com o projeto compilando sem erros e todos os testes passando.
 - Nenhum rastro de IA no histórico: sem `Co-Authored-By`, sem "Generated with" e sem menção a IA nas mensagens de commit.
+- Depois de cada commit, confira com `git log -1 --format=full` que nenhum trailer foi anexado (como `Co-Authored-By` ou `Claude-Session`). Se aparecer, corrija com `git commit --amend` antes do push.
 - Nunca commitar `Library/`, `Temp/`, `Logs/`, `UserSettings/`, `obj/`, `.vs/`, `.vscode/`, arquivos de solução gerados (`*.csproj`, `*.sln`, `*.slnx`), builds ou segredos.

@@ -69,3 +69,8 @@ Registro do que foi decidido e por quê. Decisões novas entram no fim, com data
 - **Fases do protótipo detalhadas; as demais em rascunho.** O protótipo vai mudar o plano, então cada rascunho é refinado quando chegar a vez dele.
 - **Skill `implementar-fase`.** Mesmo fluxo em toda sessão: plano antes de código, bugs pensados antes de escrever, o básico bem feito e testes.
 - **Fase só fecha depois do teste jogando.** Sensação de jogo não se verifica com teste automatizado.
+
+## 04/11/2026: revisão do workflow
+
+- **Play Mode recarregando domínio e cena.** O template vem com o recarregamento de domínio desligado, o que deixa estado estático sobreviver de um Play para o outro. Com FishNet e Steamworks.NET no projeto, a entrada um pouco mais lenta no Play Mode compensa os bugs evitados. Dá para voltar ao modo rápido depois, com reset explícito dos estáticos.
+- **Checagem de trailer depois de cada commit.** Garante o histórico sem rastro de IA mesmo que alguma versão do Claude Code anexe um trailer novo.

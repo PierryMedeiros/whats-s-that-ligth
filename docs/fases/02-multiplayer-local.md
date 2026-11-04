@@ -10,6 +10,7 @@ Dois jogadores na mesma ilha, se vendo e se empurrando, com o FishNet no transpo
 ## Escopo
 
 - Instalar o FishNet (versão gratuita).
+- Instalar o Multiplayer Play Mode (`com.unity.multiplayer.playmode`) para testar vários jogadores no mesmo PC.
 - NetworkManager com Tugboat, para host e cliente.
 - Spawn do jogador em rede, com o movimento do próprio jogador sob autoridade do cliente.
 - Empurrão simples, sem arma, com knockback: a base do combate.
