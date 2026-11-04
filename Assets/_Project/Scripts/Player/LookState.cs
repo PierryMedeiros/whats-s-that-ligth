@@ -25,6 +25,11 @@ namespace ProjetoLuz.Player
             Rotate(rate * (degreesPerSecond * deltaTime));
         }
 
+        public void AddYaw(float degrees)
+        {
+            Yaw = Mathf.Repeat(Yaw + degrees, 360f);
+        }
+
         private void Rotate(Vector2 degrees)
         {
             Yaw = Mathf.Repeat(Yaw + degrees.x, 360f);

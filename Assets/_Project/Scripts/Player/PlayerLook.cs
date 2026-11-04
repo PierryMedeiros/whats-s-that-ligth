@@ -20,7 +20,12 @@ namespace ProjetoLuz.Player
         private void Update()
         {
             ApplyInput();
-            _cameraPivot.rotation = Quaternion.Euler(_state.Pitch, _state.Yaw, 0f);
+            _cameraPivot.rotation = transform.rotation * Quaternion.Euler(_state.Pitch, _state.Yaw, 0f);
+        }
+
+        public void AddYaw(float degrees)
+        {
+            _state.AddYaw(degrees);
         }
 
         private void ApplyInput()

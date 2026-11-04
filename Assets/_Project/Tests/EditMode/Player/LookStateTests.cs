@@ -82,5 +82,17 @@ namespace ProjetoLuz.Tests.EditMode.Player
             Assert.That(look.Yaw, Is.EqualTo(120f).Within(Tolerance));
             Assert.That(look.Pitch, Is.EqualTo(0f));
         }
+
+        [Test]
+        public void AddYaw_RotatesYawAndWrapsWithoutTouchingPitch()
+        {
+            var look = new LookState(85f, 350f);
+            look.ApplyDelta(new Vector2(0f, 10f), 1f);
+
+            look.AddYaw(-370f);
+
+            Assert.That(look.Yaw, Is.EqualTo(340f).Within(Tolerance));
+            Assert.That(look.Pitch, Is.EqualTo(-10f).Within(Tolerance));
+        }
     }
 }
