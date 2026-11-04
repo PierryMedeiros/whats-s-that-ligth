@@ -78,6 +78,7 @@ Co-op em primeira pessoa para PC (Steam), de 1 a 4 jogadores ou solo. Os Cacarec
 - Comece cada sessão com a árvore git limpa.
 - Depois de alterar scripts: espere compilar, leia o console, rode os testes e corrija tudo antes de seguir.
 - Mudanças pequenas e incrementais. Ao terminar, diga o que testar jogando no editor.
+- Depois de passar um roteiro de teste ao usuário, não use o editor (Play, testes, recompilar) até ele responder, porque ele pode estar jogando.
 - Não edite `.meta`, `Library/`, `ProjectSettings/` nem `Packages/manifest.json` sem pedir.
 - Não apague nem mova assets sem confirmar.
 
