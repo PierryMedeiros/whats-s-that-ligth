@@ -1,7 +1,7 @@
 # Fase 03: Voo do helicóptero
 
 **Marco:** Protótipo
-**Status:** implementada, aguardando teste do usuário
+**Status:** concluída
 
 ## Objetivo
 
@@ -26,12 +26,12 @@ Um helicóptero em greybox que um jogador consegue pilotar, em solo e em rede.
 
 ## Critérios de pronto
 
-- [ ] Um jogador pilota em solo, como host e como cliente.
-- [ ] Trocar de piloto não faz o helicóptero pular nem travar.
-- [ ] O piloto não treme na tela dos outros jogadores.
-- [ ] Inclinação e rotor visíveis para todos.
+- [x] Um jogador pilota em solo, como host e como cliente.
+- [x] Trocar de piloto não faz o helicóptero pular nem travar.
+- [x] O piloto não treme na tela dos outros jogadores.
+- [x] Inclinação e rotor visíveis para todos.
 - [x] Regras puras do voo com testes de Edit Mode.
-- [ ] Usuário ajustou os valores e aprovou a sensação de voo.
+- [x] Usuário ajustou os valores e aprovou a sensação de voo.
 
 ## Bugs prováveis
 
@@ -40,7 +40,7 @@ Um helicóptero em greybox que um jogador consegue pilotar, em solo e em rede.
 - Input do piloto sendo lido também pelos outros jogadores: o voo só lê o input do piloto local.
 - Física diferente no host e no cliente: só quem controla simula; nos outros o corpo é kinematic.
 - Piloto desconectando no ar: o servidor libera o assento e retoma o ownership, sem despawnar o helicóptero.
-- Dois jogadores entrando ao mesmo tempo: o servidor decide.
+- Dois jogadores entrando ao mesmo tempo: o servidor decide. Não testado à mão, porque o Multiplayer Play Mode manda o teclado só para a janela em foco.
 - Cápsula do piloto empurrando o helicóptero por dentro: collider do jogador desligado enquanto está sentado.
 
 ## Referências
