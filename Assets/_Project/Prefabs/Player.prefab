@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 6374467442229515280}
   - component: {fileID: 4295338104565295727}
   - component: {fileID: 8469315316250133853}
+  - component: {fileID: 6584089267488060360}
+  - component: {fileID: 6378689701929115574}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -200,6 +202,8 @@ MonoBehaviour:
   _jump: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _sprint: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _push: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _interact: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _crouch: {fileID: 7040659881675835329, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &7488466410571995072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +321,7 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 3234187335703091498}
   _networkObjectCache: {fileID: 0}
   _componentConfiguration: 0
-  _synchronizeParent: 0
+  _synchronizeParent: 1
   _packing:
     Position: 1
     Rotation: 1
@@ -388,7 +392,44 @@ MonoBehaviour:
   - {fileID: 3501800880131169308}
   - {fileID: 8499558006315963472}
   - {fileID: 429587040481202381}
+  - {fileID: 6378689701929115574}
   _body: {fileID: 1026360913427900410}
+--- !u!114 &6584089267488060360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549817492975598617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a19033ef0fb97442bb7b28991aee2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjetoLuz::ProjetoLuz.Helicopter.SeatedPlayer
+  _networkObject: {fileID: 3234187335703091498}
+  _body: {fileID: 1026360913427900410}
+  _collider: {fileID: 6082655690871248023}
+  _look: {fileID: 7488466410571995072}
+  _input: {fileID: 6759777380617054466}
+  _disabledWhileSeated:
+  - {fileID: 8905027247139998480}
+  - {fileID: 3501800880131169308}
+--- !u!114 &6378689701929115574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549817492975598617}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5d079df236c5a4db25eecc07321cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjetoLuz::ProjetoLuz.Helicopter.SeatInteraction
+  _input: {fileID: 6759777380617054466}
+  _seated: {fileID: 6584089267488060360}
+  _aim: {fileID: 1792398060346058013}
+  _range: 3
 --- !u!1 &3943470785590812058
 GameObject:
   m_ObjectHideFlags: 0
