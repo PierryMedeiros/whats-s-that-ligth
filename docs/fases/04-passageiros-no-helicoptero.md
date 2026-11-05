@@ -1,7 +1,7 @@
 # Fase 04: Passageiros no helicóptero
 
 **Marco:** Protótipo
-**Status:** em andamento
+**Status:** implementada, aguardando teste do usuário
 
 ## Objetivo
 
@@ -14,7 +14,7 @@ Os outros jogadores ficam em pé dentro do helicóptero em movimento, estáveis,
 - Ao entrar, a velocidade do passageiro passa a ser relativa ao helicóptero; ao sair, ele herda a velocidade do helicóptero, estimada pelo movimento do transform.
 - A direção de andar do `PlayerMotor` soma a rotação do corpo, que gira junto com o helicóptero.
 - Entrar e sair andando, inclusive pulando do helicóptero em voo.
-- Até 4 jogadores: um piloto e três passageiros. Cabine maior, com grades laterais baixas: seguram quem anda, mas um empurrão ainda joga alguém para fora.
+- Até 4 jogadores: um piloto e três passageiros. Cabine maior (3,6 × 4,6 m) e mais baixa, com rampa na porta esquerda para entrar andando, e grades de 0,3 m: seguram quem anda, mas um empurrão ainda joga alguém para fora.
 
 ## Fora do escopo
 
@@ -27,7 +27,7 @@ Os outros jogadores ficam em pé dentro do helicóptero em movimento, estáveis,
 - [ ] Funciona para host e clientes, testado no Multiplayer Play Mode com pelo menos 3 jogadores.
 - [ ] Sair andando ou pulando do helicóptero funciona sem teletransporte.
 - [ ] As grades seguram quem anda, mas o empurrão joga para fora.
-- [ ] Regras puras com testes de Edit Mode.
+- [x] Regras puras com testes de Edit Mode.
 - [ ] Usuário testou em grupo e aprovou.
 
 ## Bugs prováveis

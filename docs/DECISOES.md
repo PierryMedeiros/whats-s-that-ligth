@@ -110,3 +110,11 @@ Registro do que foi decidido e por quê. Decisões novas entram no fim, com data
 - **Helicóptero com `Prevent Despawn On Disconnect`.** Sem isso, o FishNet despawnaria o helicóptero junto com o piloto que caiu da partida; o servidor libera o assento e retoma o ownership.
 - **Interact sem a interação Hold do template.** Entrar e sair do assento é um toque, não segurar.
 - **No host, o `OnChange` de `SyncVar` do FishNet recebe o valor novo também como anterior.** O assento guarda localmente quem está sentado em vez de confiar no valor anterior.
+
+## 05/11/2026: passageiros no helicóptero (fase 04)
+
+- **Passageiro preso ao helicóptero pelo volume da cabine, com parent em rede.** Entrar no trigger da cabine dá o parent; sair tira, e o passageiro herda a velocidade do helicóptero estimada pelo movimento do transform. Pular dentro da cabine não solta.
+- **Rigidbody dinâmico filho não acompanha um parent movido pela física.** Quando o helicóptero é simulado na própria máquina (o host sem piloto), o passageiro anda junto a velocidade do ponto do helicóptero onde está (`GetPointVelocity`) e gira junto, a cada passo de física. Quando o helicóptero é kinematic e anda pelo `NetworkTransform`, a hierarquia já leva o passageiro, e a velocidade simulada é zero, então o mesmo código serve aos dois casos.
+- **Cabine mais baixa, com rampa e grades de 0,3 m.** O chão a 1,15 m pedia pulo no limite para entrar; agora fica a 0,6 m, com rampa na porta esquerda. As grades seguram quem anda (o motor bloqueia superfícies íngremes), mas o empurrão de 3 m/s para cima passa por elas.
+- **Volume da cabine no layer Ignore Raycast.** Sem isso, o trigger da cabine bloqueia o raycast que mira o assento do piloto.
+- **Direção de andar soma a rotação do corpo.** Dentro do helicóptero o corpo gira com ele, e o yaw da câmera passou a ser relativo ao corpo na fase 03.
