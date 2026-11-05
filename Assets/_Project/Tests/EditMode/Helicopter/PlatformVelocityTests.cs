@@ -42,6 +42,23 @@ namespace ProjetoLuz.Tests.EditMode.Helicopter
         }
 
         [Test]
+        public void Carry_MovesByPlatformVelocityOverTheStep()
+        {
+            var position = PlatformVelocity.Carry(new Vector3(1f, 2f, 3f), new Vector3(10f, 0f, -5f), 0.1f);
+
+            Assert.That(Vector3.Distance(position, new Vector3(2f, 2f, 2.5f)), Is.LessThan(Tolerance));
+        }
+
+        [Test]
+        public void Carry_StillPlatformOrNegativeTime_KeepsPosition()
+        {
+            var start = new Vector3(1f, 2f, 3f);
+
+            Assert.That(PlatformVelocity.Carry(start, Vector3.zero, 0.1f), Is.EqualTo(start));
+            Assert.That(PlatformVelocity.Carry(start, Vector3.one, -1f), Is.EqualTo(start));
+        }
+
+        [Test]
         public void ToRelativeThenToWorld_RoundTrips()
         {
             var world = new Vector3(3f, -1f, 7f);

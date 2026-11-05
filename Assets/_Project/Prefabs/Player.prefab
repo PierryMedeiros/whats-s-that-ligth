@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 8469315316250133853}
   - component: {fileID: 6584089267488060360}
   - component: {fileID: 6378689701929115574}
+  - component: {fileID: 8151569112135996074}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -393,6 +394,7 @@ MonoBehaviour:
   - {fileID: 8499558006315963472}
   - {fileID: 429587040481202381}
   - {fileID: 6378689701929115574}
+  - {fileID: 8151569112135996074}
   _body: {fileID: 1026360913427900410}
 --- !u!114 &6584089267488060360
 MonoBehaviour:
@@ -430,6 +432,21 @@ MonoBehaviour:
   _seated: {fileID: 6584089267488060360}
   _aim: {fileID: 1792398060346058013}
   _range: 3
+--- !u!114 &8151569112135996074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549817492975598617}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cc15289c5cd324aa66cd900ba9a117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: ProjetoLuz::ProjetoLuz.Helicopter.PlatformRider
+  _networkObject: {fileID: 3234187335703091498}
+  _body: {fileID: 1026360913427900410}
+  _seated: {fileID: 6584089267488060360}
 --- !u!1 &3943470785590812058
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,11 @@ namespace ProjetoLuz.Helicopter
             return Vector3.Lerp(smoothedVelocity, measured, blend);
         }
 
+        public static Vector3 Carry(Vector3 position, Vector3 platformPointVelocity, float deltaTime)
+        {
+            return position + platformPointVelocity * Mathf.Max(0f, deltaTime);
+        }
+
         public static Vector3 ToRelative(Vector3 worldVelocity, Vector3 platformVelocity)
         {
             return worldVelocity - platformVelocity;

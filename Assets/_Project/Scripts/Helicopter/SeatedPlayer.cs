@@ -1,3 +1,4 @@
+using System;
 using FishNet.Object;
 using ProjetoLuz.Player;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace ProjetoLuz.Helicopter
         [SerializeField] private PlayerInputReader _input;
         [SerializeField] private Behaviour[] _disabledWhileSeated;
 
+        public event Action<bool> SeatedChanged;
+
         public PilotSeat Seat { get; private set; }
         public bool IsSeated => Seat != null;
         public bool IsOwner => _networkObject.IsOwner;
@@ -22,6 +25,7 @@ namespace ProjetoLuz.Helicopter
         public void Sit(PilotSeat seat)
         {
             Seat = seat;
+            SeatedChanged?.Invoke(true);
             _collider.enabled = false;
             if (!IsOwner)
                 return;
@@ -29,15 +33,16 @@ namespace ProjetoLuz.Helicopter
             SetOwnerControl(false);
             _body.isKinematic = true;
             _body.interpolation = RigidbodyInterpolation.None;
-            var seatYaw = seat.transform.eulerAngles.y;
+            var turnIntoSeat = Mathf.DeltaAngle(transform.eulerAngles.y, seat.transform.eulerAngles.y);
             _networkObject.SetParent(seat);
             transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-            _look.AddYaw(-seatYaw);
+            _look.AddYaw(-turnIntoSeat);
         }
 
         public void Stand(Vector3 exitPosition)
         {
             Seat = null;
+            SeatedChanged?.Invoke(false);
             _collider.enabled = true;
             if (!IsOwner)
                 return;

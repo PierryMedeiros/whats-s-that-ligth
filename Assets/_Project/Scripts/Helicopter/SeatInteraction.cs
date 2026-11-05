@@ -28,7 +28,7 @@ namespace ProjetoLuz.Helicopter
                 return;
             }
 
-            if (!Physics.Raycast(_aim.position, _aim.forward, out var hit, _range, Physics.AllLayers, QueryTriggerInteraction.Collide))
+            if (!Physics.Raycast(_aim.position, _aim.forward, out var hit, _range, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Collide))
                 return;
 
             if (hit.collider.TryGetComponent(out PilotSeat seat))

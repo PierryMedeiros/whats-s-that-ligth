@@ -109,7 +109,7 @@ namespace ProjetoLuz.Player
         private void Move(float deltaTime)
         {
             var speed = _input.IsSprinting ? _settings.SprintSpeed : _settings.WalkSpeed;
-            var flatTarget = GroundMovement.TargetVelocity(_input.Move, _look.Yaw, speed);
+            var flatTarget = GroundMovement.TargetVelocity(_input.Move, _look.Yaw + transform.eulerAngles.y, speed);
             if (_hasSteepContact)
                 flatTarget = GroundMovement.BlockIntoSteepSurface(flatTarget, _steepNormal);
 
