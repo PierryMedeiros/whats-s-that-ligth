@@ -14,6 +14,7 @@ Dar ao jogador vida, morte e as duas formas de reviver, com as regras de reiníc
 - Todos mortos reinicia a ilha; regra própria do solo.
 - Itens do inventário nunca se perdem; o objeto que estava nas mãos cai onde o jogador morreu.
 - O `FallRespawn` do protótipo (congela e renasce no totem em 3 s) vira parte desse sistema: cair da ilha passa a ser morte, com os 10 s do GDD no solo.
+- O `SeatedPlayer` desliga o `FallRespawn` enquanto o jogador está sentado; o componente que o substituir entra nessa lista.
 
 ## Referências
 
