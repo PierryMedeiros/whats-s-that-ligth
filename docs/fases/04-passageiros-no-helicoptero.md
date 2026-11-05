@@ -1,7 +1,7 @@
 # Fase 04: Passageiros no helicóptero
 
 **Marco:** Protótipo
-**Status:** implementada, aguardando teste do usuário
+**Status:** implementada, aguardando teste do usuário. O teste com passageiros vai acontecer junto com o da fase 05, com um amigo pela Steam, porque com um teclado só não dá para pilotar e ser passageiro ao mesmo tempo. As duas fases fecham juntas.
 
 ## Objetivo
 
