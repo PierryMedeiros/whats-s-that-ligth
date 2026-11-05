@@ -1,7 +1,7 @@
 # Fase 03: Voo do helicóptero
 
 **Marco:** Protótipo
-**Status:** em andamento
+**Status:** implementada, aguardando teste do usuário
 
 ## Objetivo
 
@@ -30,7 +30,7 @@ Um helicóptero em greybox que um jogador consegue pilotar, em solo e em rede.
 - [ ] Trocar de piloto não faz o helicóptero pular nem travar.
 - [ ] O piloto não treme na tela dos outros jogadores.
 - [ ] Inclinação e rotor visíveis para todos.
-- [ ] Regras puras do voo com testes de Edit Mode.
+- [x] Regras puras do voo com testes de Edit Mode.
 - [ ] Usuário ajustou os valores e aprovou a sensação de voo.
 
 ## Bugs prováveis

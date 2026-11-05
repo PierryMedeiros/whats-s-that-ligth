@@ -99,3 +99,14 @@ Registro do que foi decidido e por quê. Decisões novas entram no fim, com data
 - **Empurrão pedido pelo dono, validado no servidor e aplicado no dono do alvo** (`ServerRpc` e depois `TargetRpc`). O alvo fica um instante sem controle para a aceleração do motor não anular o knockback.
 - **`FallRespawn` encontra o totem ao nascer.** Um prefab de rede não guarda referência de cena; quando houver várias ilhas (fase 15), a ilha atual passa a fornecer o totem.
 - **Meshes de greybox com colisão pré-processada.** No Unity 6.6 a colisão pré-processada é ligada em cada mesh, e os meshes embutidos (Cylinder, Sphere) não aceitam a opção; o Inspector avisa que versões futuras não vão mais preparar a colisão sozinhas no build. Os colliders de cena usam cópias em `Art/Meshes` (`GreyboxCylinder`, `GreyboxSphere`) com a opção ligada. Modelos do Blender vão precisar da mesma opção na importação.
+
+## 04/11/2026: voo do helicóptero (fase 03)
+
+- **Voo arcade por controle de velocidade.** Com piloto, o motor leva a velocidade do Rigidbody até o alvo do input, com aceleração separada na horizontal e na vertical, e a gravidade fica desligada (sem input, paira). Sem piloto, a gravidade volta e o helicóptero cai. Rotação X/Z travada: não capota.
+- **Inclinação e rotor só visuais, calculados em cada máquina** a partir do movimento do próprio transform. Nada a mais na rede, e passageiros e espectadores veem o mesmo efeito.
+- **Piloto preso ao assento pelo parent em rede do FishNet** (`NetworkObject.SetParent` com `Synchronize Parent` no `NetworkTransform` do jogador). A posição viaja relativa ao assento, então o piloto não treme na tela dos outros. É o caminho provável para os passageiros da fase 04.
+- **Câmera do jogador relativa à rotação do corpo.** Sentado, o corpo gira com o helicóptero e a câmera vai junto; ao sentar e levantar, o yaw é compensado para a vista não pular.
+- **Troca de piloto passa a velocidade junto.** Quem entra recebe a velocidade do servidor por `TargetRpc`; quem sai manda a sua no `ServerRpc`.
+- **Helicóptero com `Prevent Despawn On Disconnect`.** Sem isso, o FishNet despawnaria o helicóptero junto com o piloto que caiu da partida; o servidor libera o assento e retoma o ownership.
+- **Interact sem a interação Hold do template.** Entrar e sair do assento é um toque, não segurar.
+- **No host, o `OnChange` de `SyncVar` do FishNet recebe o valor novo também como anterior.** O assento guarda localmente quem está sentado em vez de confiar no valor anterior.
